@@ -5,6 +5,8 @@ import com.alexkaradimos.blockchain.helpers.StringUtil;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
+import static com.alexkaradimos.blockchain.models.Blockchain.difficulty;
+
 /**
  * Created by karadalex on 14/4/2018.
  */
@@ -57,22 +59,29 @@ public class Block {
 
     public String calculateHash() {
         String calculatedhash = StringUtil.applySha256(
-                previousHash + timestamp + data
+                previousHash + timestamp + data + nonce
         );
         return calculatedhash;
     }
 
-    public void mineBlock() {
-
+    public Block mineBlock() {
+        String target = new String(new char[difficulty]).replace('\0', '0'); //Create a string with difficulty * "0"
+        while(!hash.substring( 0, difficulty).equals(target)) {
+            nonce ++;
+            hash = calculateHash();
+        }
+        System.out.println(this.toString());
+        return this;
     }
 
     @Override
     public String toString() {
-        return "Block {\n\tindex:"+getIndex()+
-                ",\n\ttimeStamp:"+getTimestamp()+
-                ",\n\tpreviousHash:"+getPreviousHash()+
-                ",\n\tdata:"+getData()+
-                ",\n\thash:"+getHash()+
+        return "Block {\n\tindex: " + getIndex() +
+                ",\n\ttimeStamp: " + getTimestamp() +
+                ",\n\tpreviousHash: " + getPreviousHash() +
+                ",\n\tdata: " + getData() +
+                ",\n\tnonce: " + getNonce() +
+                ",\n\thash: " + getHash() +
                 "\n}";
     }
 }
