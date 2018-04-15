@@ -4,9 +4,16 @@ package com.alexkaradimos.blockchain.models;
  * Created by karadalex on 16/4/2018.
  */
 public class TokenTransaction implements TokenStandardTransactionInterface {
+
+    public final String name = "Spring Token";
+    public final String symbol = "SPR";
+    public final int decimals = 18;
+
+
     @Override
     public long totalSupply() {
-        return 0;
+        // TODO calculate based on supply-demand
+        return (long) Math.pow(10, 12);
     }
 
     @Override
