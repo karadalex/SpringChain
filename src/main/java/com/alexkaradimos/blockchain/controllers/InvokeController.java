@@ -1,5 +1,6 @@
 package com.alexkaradimos.blockchain.controllers;
 
+import com.alexkaradimos.blockchain.models.Block;
 import com.alexkaradimos.blockchain.models.Blockchain;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +17,9 @@ public class InvokeController {
      * Add a new block with custom Data
      * @return
      */
-    @RequestMapping(value = "/blocks/new", method = RequestMethod.POST)
-    public String addNewBlock(@RequestBody String data) {
-        Blockchain.addBlock(data);
-        return "Block was successfully created on Blockchain";
+    @RequestMapping(value = "/block/new", method = RequestMethod.POST)
+    public Block addNewBlock(@RequestBody String data) {
+        return Blockchain.addBlock(data);
     }
 
     /**
@@ -38,7 +38,7 @@ public class InvokeController {
      * @return
      */
     @RequestMapping("/block/mine")
-    public String mineTransaction() {
-        return "success";
+    public Block mineTransaction() {
+        return Blockchain.getLatestBlock().mineBlock();
     }
 }
