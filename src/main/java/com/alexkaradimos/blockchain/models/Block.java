@@ -53,4 +53,12 @@ public class Block {
 
     }
 
+    @Override
+    public String toString() {
+        return "Block {\n\tindex:"+getIndex()+
+                ",\n\tpreviousHash:"+getPreviousHash()+
+                ",\n\tdata:"+getData()+
+                ",\n\thash:"+getHash()+
+                "\n}";
+    }
 }
