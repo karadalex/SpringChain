@@ -19,8 +19,8 @@ public class QueryController {
      * @return the block with the given index
      */
     @RequestMapping("/queryByIndex")
-    public Block getBlockByIndex(@RequestParam(value="index", defaultValue = "1") int index) {
-        return new Block(index, "previousHash", "data");
+    public Block getBlockByIndex(@RequestParam(value="index", defaultValue = "0") int index) {
+        return Blockchain.getBlocks().get(index);
     }
 
     /**
