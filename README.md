@@ -1,6 +1,10 @@
 SpringChain
 ============
 
+<p align="center">
+  <img src=""/>
+</p>
+
 [![Build Status](https://travis-ci.org/karadalex/SpringChain.svg?branch=master)](https://travis-ci.org/karadalex/SpringChain)
 [![codecov](https://codecov.io/gh/karadalex/SpringChain/branch/master/graph/badge.svg)](https://codecov.io/gh/karadalex/SpringChain)
 
@@ -14,11 +18,13 @@ Run `./mvnw`
 ## Run with Docker
 
 Run one instance with docker
+**Coming Soon**
 
 ## Run with docker-compose
 
 Run multiple instances to test blockchain peer-to-peer functionality
-and consensus
+and consensus 
+**Coming Soon**
 
 ## Code quality locally
 
