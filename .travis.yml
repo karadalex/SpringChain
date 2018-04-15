@@ -1,8 +1,11 @@
 language: java
 jdk:
-  - oraclejdk8
-  - oraclejdk9
-  - openjdk7
+  # - oraclejdk8
+  # - oraclejdk9
+  - openjdk8
 script:
   - ./mvnw clean install
+  - ./mvnw cobertura:cobertura
+
+after_success:
   - bash <(curl -s https://codecov.io/bash)
