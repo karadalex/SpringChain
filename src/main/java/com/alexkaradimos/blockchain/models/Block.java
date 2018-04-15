@@ -1,24 +1,34 @@
 package com.alexkaradimos.blockchain.models;
 
+import com.alexkaradimos.blockchain.helpers.StringUtil;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+
 /**
  * Created by karadalex on 14/4/2018.
  */
 public class Block {
 
-    public int index;
-    public String timestamp;
-    public String previousHash;
-    public String data;
-    public int nonce;
-    public String hash;
+    private int index;
+    private String timestamp;
+    private String previousHash;
+    private String data;
+    private int nonce;
+    private String hash;
 
-    public Block(int index, String timestamp, String previousHash, String data) {
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+
+    public Block(int index, String previousHash, String data) {
         this.index = index;
-        this.timestamp = timestamp;
+
+        Timestamp time = new Timestamp(System.currentTimeMillis());
+        this.timestamp = sdf.format(time);
+
         this.previousHash = previousHash;
         this.data = data;
         this.nonce = 0;
-        this.hash = "hash";
+        this.hash = calculateHash();
     }
 
     public int getIndex() {
@@ -46,7 +56,10 @@ public class Block {
     }
 
     public String calculateHash() {
-        return "hash";
+        String calculatedhash = StringUtil.applySha256(
+                previousHash + timestamp + data
+        );
+        return calculatedhash;
     }
 
     public void mineBlock() {
@@ -56,6 +69,7 @@ public class Block {
     @Override
     public String toString() {
         return "Block {\n\tindex:"+getIndex()+
+                ",\n\ttimeStamp:"+getTimestamp()+
                 ",\n\tpreviousHash:"+getPreviousHash()+
                 ",\n\tdata:"+getData()+
                 ",\n\thash:"+getHash()+
