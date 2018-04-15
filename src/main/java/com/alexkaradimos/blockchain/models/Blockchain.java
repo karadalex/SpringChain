@@ -9,6 +9,7 @@ public class Blockchain {
 
     static ArrayList<Block> blocks;
     static int latestIndex;
+    static int difficulty = 5;
 
     public Blockchain() {
         if (blocks == null) {
@@ -34,10 +35,11 @@ public class Blockchain {
         return latestIndex;
     }
 
-    public static void addBlock(String data) {
+    public static Block addBlock(String data) {
         String prevHash = getLatestBlock().getHash();
         Block newBlock = new Block(++latestIndex, prevHash, data);
         blocks.add(newBlock);
+        return newBlock;
     }
 
     public Boolean isChainValid() {
