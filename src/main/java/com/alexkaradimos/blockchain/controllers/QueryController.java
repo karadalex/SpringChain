@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QueryController {
 
+    /**
+     * Query Blockchain by Index
+     * TODO
+     * @param index
+     * @return the block with the given index
+     */
     @RequestMapping("/queryByIndex")
     public Block getBlockByIndex(@RequestParam(value="index", defaultValue = "1") int index) {
         return new Block(index, "timestamp", "previousHash", "data");
