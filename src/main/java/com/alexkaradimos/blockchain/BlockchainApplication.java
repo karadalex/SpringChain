@@ -23,6 +23,6 @@ public class BlockchainApplication {
 		System.out.println(springChain3.getLatestBlock().toString());
 
 
-//		SpringApplication.run(BlockchainApplication.class, args);
+		SpringApplication.run(BlockchainApplication.class, args);
 	}
 }
