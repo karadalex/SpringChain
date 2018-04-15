@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class Blockchain {
 
     static ArrayList<Block> blocks;
-
     static int latestIndex;
 
     public Blockchain() {
@@ -20,7 +19,7 @@ public class Blockchain {
     }
 
     private void createGenesisBlock() {
-        blocks.add(new Block(0, "time", "0", "GenesisBlock"));
+        blocks.add(new Block(0, "0", "GenesisBlock"));
     }
 
     public static ArrayList<Block> getBlocks() {
@@ -36,7 +35,8 @@ public class Blockchain {
     }
 
     public void addBlock(String data) {
-        Block newBlock = new Block(++latestIndex, "time", "0", data);
+        String prevHash = getLatestBlock().getHash();
+        Block newBlock = new Block(++latestIndex, prevHash, data);
         blocks.add(newBlock);
     }
 
