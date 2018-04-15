@@ -9,10 +9,13 @@ public class Blockchain {
 
     static ArrayList<Block> blocks;
 
+    static int latestIndex;
+
     public Blockchain() {
         if (blocks == null) {
             blocks = new ArrayList<Block>();
             createGenesisBlock();
+            latestIndex = 0;
         }
     }
 
@@ -25,10 +28,15 @@ public class Blockchain {
     }
 
     public static Block getLatestBlock() {
-        return blocks.get(blocks.size()-1);
+        return blocks.get(latestIndex);
     }
 
-    public void addBlock(Block newBlock) {
+    public static int getLatestIndex() {
+        return latestIndex;
+    }
+
+    public void addBlock(String data) {
+        Block newBlock = new Block(++latestIndex, "time", "0", data);
         blocks.add(newBlock);
     }
 
