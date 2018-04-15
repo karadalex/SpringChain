@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "e5e49bc0-c9a5-4df4-a4f2-cf1f73f1a3f4",
+		"name": "SpringChain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Query",
+			"description": null,
+			"item": [
+				{
+					"name": "Get Latest Block",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/getLatestBlock",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getLatestBlock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getAll"
+							]
+						},
+						"description": "Get list of all blocks"
+					},
+					"response": []
+				},
+				{
+					"name": "Query By Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/queryByIndex?index=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"queryByIndex"
+							],
+							"query": [
+								{
+									"key": "index",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoke",
+			"description": null,
+			"item": [
+				{
+					"name": "New Block",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Data from Postman"
+						},
+						"url": {
+							"raw": "localhost:8080/block/new",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"block",
+								"new"
+							]
+						},
+						"description": "Create a new block with custom data"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine Block",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/block/mine",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"block",
+								"mine"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
