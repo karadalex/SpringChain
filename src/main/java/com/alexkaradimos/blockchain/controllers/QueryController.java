@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+
 /**
  * Created by karadalex on 14/4/2018.
  */
@@ -30,6 +32,15 @@ public class QueryController {
     @RequestMapping("/getLatestBlock")
     public Block getLatestBlock() {
         return Blockchain.getLatestBlock();
+    }
+
+    /**
+     * Get all Blocks in the Blockchain
+     * @return list Blocks
+     */
+    @RequestMapping("/getAll")
+    public ArrayList<Block> getAll() {
+        return Blockchain.getBlocks();
     }
 
 }
