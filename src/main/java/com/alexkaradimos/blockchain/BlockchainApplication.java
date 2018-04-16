@@ -9,6 +9,7 @@ public class BlockchainApplication {
 
 	public static void main(String[] args) {
 		new Blockchain();
+		Blockchain.addBlock("first block");
 
 		SpringApplication.run(BlockchainApplication.class, args);
 	}
