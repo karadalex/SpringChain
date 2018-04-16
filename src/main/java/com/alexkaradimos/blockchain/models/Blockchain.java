@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Blockchain {
 
     static ArrayList<Block> blocks;
+    static ArrayList<SubBlockchain> subBlockchains;
     static int latestIndex;
     static int difficulty = 5;
 
@@ -16,6 +17,9 @@ public class Blockchain {
             blocks = new ArrayList<Block>();
             createGenesisBlock();
             latestIndex = 0;
+        }
+        if (subBlockchains == null) {
+            subBlockchains = new ArrayList<SubBlockchain>();
         }
     }
 
@@ -44,6 +48,12 @@ public class Blockchain {
         Block newBlock = new Block(++latestIndex, prevHash, data);
         blocks.add(newBlock);
         return newBlock;
+    }
+
+    public static SubBlockchain addSubBlockchain() {
+        SubBlockchain subBlockchain = new SubBlockchain();
+        subBlockchains.add(subBlockchain);
+        return subBlockchain;
     }
 
     public static Boolean isChainValid() {
