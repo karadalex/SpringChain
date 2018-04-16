@@ -4,6 +4,7 @@ import com.alexkaradimos.blockchain.helpers.StringUtil;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import static com.alexkaradimos.blockchain.models.Blockchain.difficulty;
 
@@ -15,22 +16,31 @@ public class Block {
     private int index;
     private String timestamp;
     private String previousHash;
-    private String data;
     private int nonce;
     private String hash;
 
+    // Different types of data
+    private String stringData;
+    private ArrayList<TokenTransaction> tokenTransactionsData;
+    private ArrayList<DataTransaction> dataTransactionsData;
+    private ArrayList<SubBlock> subBlocksData;
+
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 
-    public Block(int index, String previousHash, String data) {
+    public Block(int index, String previousHash, String stringData) {
         this.index = index;
 
         Timestamp time = new Timestamp(System.currentTimeMillis());
         this.timestamp = sdf.format(time);
 
         this.previousHash = previousHash;
-        this.data = data;
+        this.stringData = stringData;
         this.nonce = 0;
         this.hash = calculateHash();
+
+        this.tokenTransactionsData = new ArrayList<TokenTransaction>();
+        this.dataTransactionsData = new ArrayList<DataTransaction>();
+        this.subBlocksData = new ArrayList<SubBlock>();
     }
 
     public int getIndex() {
@@ -45,8 +55,20 @@ public class Block {
         return previousHash;
     }
 
-    public String getData() {
-        return data;
+    public String getStringData() {
+        return stringData;
+    }
+
+    public ArrayList<TokenTransaction> getTokenTransactionsData() {
+        return tokenTransactionsData;
+    }
+
+    public ArrayList<DataTransaction> getDataTransactionsData() {
+        return dataTransactionsData;
+    }
+
+    public ArrayList<SubBlock> getSubBlocksData() {
+        return subBlocksData;
     }
 
     public int getNonce() {
@@ -59,7 +81,7 @@ public class Block {
 
     public String calculateHash() {
         String calculatedhash = StringUtil.applySha256(
-                previousHash + timestamp + data + nonce
+                previousHash + timestamp + stringData + nonce
         );
         return calculatedhash;
     }
@@ -74,12 +96,26 @@ public class Block {
         return this;
     }
 
+    // TODO specify in which subBlockchain the newSubBlock will belong to
+    public SubBlock addSubBlock(SubBlock newSubBlock) {
+        subBlocksData.add(newSubBlock);
+        return newSubBlock;
+    }
+
     @Override
     public String toString() {
+        String subBlocksDataToString = "[\n";
+        for (int i = 0; i < getSubBlocksData().size(); i++) {
+            subBlocksDataToString += "\t\t\t" + getSubBlocksData().get(i).toString() + "\n";
+        }
+        subBlocksDataToString += "\t\t]";
+        String data = "{\n\t\tstringData: " + getStringData() +
+                ",\n\t\tsubBlocksData: " + subBlocksDataToString +
+                "\n\t}";
         return "Block {\n\tindex: " + getIndex() +
                 ",\n\ttimeStamp: " + getTimestamp() +
                 ",\n\tpreviousHash: " + getPreviousHash() +
-                ",\n\tdata: " + getData() +
+                ",\n\tdata: " + data +
                 ",\n\tnonce: " + getNonce() +
                 ",\n\thash: " + getHash() +
                 "\n}";
