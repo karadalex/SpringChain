@@ -31,6 +31,10 @@ public class Blockchain {
         return blocks;
     }
 
+    public static ArrayList<SubBlockchain> getSubBlockchains() {
+        return subBlockchains;
+    }
+
     public static Block getLatestBlock() {
         return blocks.get(latestIndex);
     }
@@ -50,10 +54,17 @@ public class Blockchain {
         return newBlock;
     }
 
-    public static SubBlockchain addSubBlockchain() {
-        SubBlockchain subBlockchain = new SubBlockchain();
+    public static SubBlockchain addSubBlockchain(int difficulty) {
+        SubBlockchain subBlockchain = new SubBlockchain(difficulty);
         subBlockchains.add(subBlockchain);
         return subBlockchain;
+    }
+
+    public static int getSubBlockchainIndexFromUUID(String uuid) {
+        for (int i = 0; i < subBlockchains.size(); i++) {
+            if (subBlockchains.get(i).getSubBlockchainId().equals(uuid)) return i;
+        }
+        return -1;
     }
 
     public static Boolean isChainValid() {
