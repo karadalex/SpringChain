@@ -1,0 +1,14 @@
+{
+  "dist": "docs",
+  "docs": "md-docs",
+
+  "css": [
+    "style.css"
+  ],
+  "github": "karadalex/SpringChain",
+  "googleAnalytics": {
+    "id": "",
+    "domain": ""
+  },
+  "scripts": []
+}

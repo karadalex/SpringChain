@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=615badd5">
+    <link rel="stylesheet" href="style.css?t=1efa2e89">
+    <script src="assets/script.js?t=42463e55"></script>
+    <title>SpringChain Overview</title>
+    <meta name="viewport" content="width=device-width">
+    <script>if (true || window.location.hostname.indexOf("") === window.location.hostname.length - 0) {
+        (function(d,o,c,p,r,e,s){d['GoogleAnalyticsObject']=r;d[r]=d[r]||function(){(d[r].q=d[r].q||[]).push(arguments)},d[r].l=1*new Date();e=o.createElement(c),s=o.getElementsByTagName(c)[0];e.async=1;e.src=p;s.parentNode.insertBefore(e,s)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create',"",'auto')
+      }
+    </script>
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title -active link-index" href="index.html">SpringChain Overview</a>
+              <ul class="headings heading-list">
+                <li class="heading-item -depth-2"><a class="hlink link-run-locally-with-maven" href="#run-locally-with-maven">Run locally with Maven</a>
+                </li>
+                <li class="heading-item -depth-2"><a class="hlink link-run-with-docker" href="#run-with-docker">Run with Docker</a>
+                </li>
+                <li class="heading-item -depth-2"><a class="hlink link-run-with-docker-compose" href="#run-with-docker-compose">Run with docker-compose</a>
+                </li>
+                <li class="heading-item -depth-2"><a class="hlink link-code-quality-locally" href="#code-quality-locally">Code quality locally</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-install" href="install.html">Installation</a>
+            </li>
+            <li class="menu-item -level-1"><a class="link title  link-architecture" href="architecture.html">Architecture</a>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-index">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/karadalex/SpringChain" data-title="karadalex/SpringChain">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="springchain">SpringChain</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/karadalex/SpringChain/master/spring-chain-logo.png">
+</p>
+<p><a href="https://travis-ci.org/karadalex/SpringChain"><img src="https://travis-ci.org/karadalex/SpringChain.svg?branch=master" alt="Build Status"></a>
+<a href="https://codecov.io/gh/karadalex/SpringChain"><img src="https://codecov.io/gh/karadalex/SpringChain/branch/master/graph/badge.svg" alt="codecov"></a></p>
+<p>Simple custom Blockchain with REST API using Spring Boot</p>
+<h2 id="run-locally-with-maven">Run locally with Maven</h2>
+<p>Run <code>./mvnw</code></p>
+<h2 id="run-with-docker">Run with Docker</h2>
+<p>Run one instance with docker
+<strong>Coming Soon</strong></p>
+<h2 id="run-with-docker-compose">Run with docker-compose</h2>
+<p>Run multiple instances to test blockchain peer-to-peer functionality
+and consensus
+<strong>Coming Soon</strong></p>
+<h2 id="code-quality-locally">Code quality locally</h2>
+<p>Check code quality locally with sonarqube</p>
+<ol>
+<li>Start sonarqube with docker-compose</li>
+</ol>
+<pre><code>docker-compose -f sonar.yml up
+</code></pre>
+<ol start="2">
+<li>Login to sonarqube with username: admin and password: admin and follow the guide for java</li>
+<li>Run the following command inside your project root directory</li>
+</ol>
+<pre><code>./mvnn sonar:sonar \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login={login-generated-from-sonar}
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="right"><a href="install.html"><span class="label">Next: </span><span class="title">Installation</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

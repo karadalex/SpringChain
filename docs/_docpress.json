@@ -1,0 +1,94 @@
+{
+  "toc": {
+    "sections": [
+      {
+        "title": "SpringChain Overview",
+        "source": "README.md",
+        "url": "index.html",
+        "slug": "index",
+        "headings": [
+          {
+            "title": "Run locally with Maven",
+            "depth": 2,
+            "id": "run-locally-with-maven"
+          },
+          {
+            "title": "Run with Docker",
+            "depth": 2,
+            "id": "run-with-docker"
+          },
+          {
+            "title": "Run with docker-compose",
+            "depth": 2,
+            "id": "run-with-docker-compose"
+          },
+          {
+            "title": "Code quality locally",
+            "depth": 2,
+            "id": "code-quality-locally"
+          }
+        ]
+      },
+      {
+        "title": "Installation",
+        "source": "md-docs/install.md",
+        "url": "install.html",
+        "slug": "install"
+      },
+      {
+        "title": "Architecture",
+        "source": "md-docs/architecture.md",
+        "url": "architecture.html",
+        "slug": "architecture"
+      }
+    ]
+  },
+  "index": {
+    "index.html": {
+      "source": "README.md",
+      "title": "SpringChain Overview",
+      "pageTitle": "SpringChain Overview",
+      "slug": "index",
+      "headings": [
+        {
+          "title": "Run locally with Maven",
+          "depth": 2,
+          "id": "run-locally-with-maven"
+        },
+        {
+          "title": "Run with Docker",
+          "depth": 2,
+          "id": "run-with-docker"
+        },
+        {
+          "title": "Run with docker-compose",
+          "depth": 2,
+          "id": "run-with-docker-compose"
+        },
+        {
+          "title": "Code quality locally",
+          "depth": 2,
+          "id": "code-quality-locally"
+        }
+      ]
+    },
+    "install.html": {
+      "source": "md-docs/install.md",
+      "title": "Installation - SpringChain Overview",
+      "pageTitle": "Installation",
+      "slug": "install"
+    },
+    "architecture.html": {
+      "source": "md-docs/architecture.md",
+      "title": "Architecture - SpringChain Overview",
+      "pageTitle": "Architecture",
+      "slug": "architecture"
+    }
+  },
+  "sources": {
+    "README.md": "index.html",
+    "md-docs/install.md": "install.html",
+    "md-docs/architecture.md": "architecture.html",
+    "md-docs/style.css": "style.css"
+  }
+}
