@@ -42,7 +42,12 @@ public class Blockchain {
         return newBlock;
     }
 
-    public Boolean isChainValid() {
+    public static Boolean isChainValid() {
+        for (int i = 1; i < blocks.size(); i++) {
+            String currentHash = blocks.get(i).getPreviousHash();
+            String previousHash = blocks.get(i-1).getHash();
+            if (!currentHash.equals(previousHash)) return false;
+        }
         return true;
     }
 }
