@@ -24,7 +24,7 @@ public class GetLatestBlockTest {
         for (int i = 1; i <= 10; i++) {
             Blockchain.addBlock("block"+i);
         }
-        Assert.assertEquals(Blockchain.getLatestBlock().getData(), "block10");
+        Assert.assertEquals(Blockchain.getLatestBlock().getStringData(), "block10");
         Assert.assertEquals(Blockchain.getLatestBlock().getIndex(), 10);
     }
 }

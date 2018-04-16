@@ -28,6 +28,6 @@ public class QueryByIndexTest {
         Blockchain.addBlock("block3");
         Block block2 = Blockchain.getBlocks().get(2);
         Assert.assertEquals(block2.getIndex(), 2);
-        Assert.assertEquals(block2.getData(), "block2");
+        Assert.assertEquals(block2.getStringData(), "block2");
     }
 }

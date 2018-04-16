@@ -21,7 +21,7 @@ public class BlockTests {
             Assert.assertEquals(hashAfterMining.charAt(i), '0');
         }
         String hashCalculatedInTest = StringUtil.applySha256(
-                block.getPreviousHash() + block.getTimestamp() + block.getData() + block.getNonce()
+                block.getPreviousHash() + block.getTimestamp() + block.getStringData() + block.getNonce()
         );
         Assert.assertEquals(hashCalculatedInTest, hashAfterMining);
     }
