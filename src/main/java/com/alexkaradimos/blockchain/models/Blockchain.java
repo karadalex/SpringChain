@@ -35,6 +35,10 @@ public class Blockchain {
         return latestIndex;
     }
 
+    public static int getDifficulty() {
+        return difficulty;
+    }
+
     public static Block addBlock(String data) {
         String prevHash = getLatestBlock().getHash();
         Block newBlock = new Block(++latestIndex, prevHash, data);
