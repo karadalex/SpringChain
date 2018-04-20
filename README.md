@@ -7,6 +7,7 @@ SpringChain
 
 [![Build Status](https://travis-ci.org/karadalex/SpringChain.svg?branch=master)](https://travis-ci.org/karadalex/SpringChain)
 [![codecov](https://codecov.io/gh/karadalex/SpringChain/branch/master/graph/badge.svg)](https://codecov.io/gh/karadalex/SpringChain)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5cad4f25dafea4ed1168/maintainability)](https://codeclimate.com/github/karadalex/SpringChain/maintainability)
 
 
 Simple custom Blockchain with REST API using Spring Boot
