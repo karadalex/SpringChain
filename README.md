@@ -2,7 +2,7 @@ SpringChain
 ============
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/karadalex/SpringChain/master/spring-chain-logo.png"/>
+  <img src="spring-chain-logo.png"/>
 </p>
 
 [![Build Status](https://travis-ci.org/karadalex/SpringChain.svg?branch=master)](https://travis-ci.org/karadalex/SpringChain)
