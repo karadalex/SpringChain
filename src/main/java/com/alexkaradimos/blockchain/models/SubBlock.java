@@ -31,6 +31,11 @@ public class SubBlock {
         this.hash = calculateHash();
     }
 
+    public SubBlock() {
+        // Default constructor
+        // used in deserialization
+    }
+
     public int getIndex() {
         return index;
     }
