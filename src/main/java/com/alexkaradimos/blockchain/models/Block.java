@@ -1,5 +1,6 @@
 package com.alexkaradimos.blockchain.models;
 
+import com.alexkaradimos.blockchain.helpers.Storage;
 import com.alexkaradimos.blockchain.helpers.StringUtil;
 
 import java.sql.Timestamp;
@@ -98,12 +99,14 @@ public class Block {
             hash = calculateHash();
         }
         System.out.println(this.toString());
+        Storage.serializeBlockchain();
         return this;
     }
 
     // TODO specify in which subBlockchain the newSubBlock will belong to
     public SubBlock addSubBlock(SubBlock newSubBlock) {
         subBlocksData.add(newSubBlock);
+        Storage.serializeBlockchain();
         return newSubBlock;
     }
 

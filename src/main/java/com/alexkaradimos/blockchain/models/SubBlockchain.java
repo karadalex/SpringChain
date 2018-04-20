@@ -1,5 +1,6 @@
 package com.alexkaradimos.blockchain.models;
 
+import com.alexkaradimos.blockchain.helpers.Storage;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
@@ -62,6 +63,7 @@ public class SubBlockchain {
         String prevHash = getLatestSubBlock().getHash();
         SubBlock newBlock = new SubBlock(++latestIndex, prevHash, data);
         subBlocks.add(newBlock);
+        Storage.serializeBlockchain();
         // TODO: find a way to reduce duplicate subBlock
         Blockchain.getLatestBlock().addSubBlock(newBlock);
         return newBlock;

@@ -76,6 +76,7 @@ public class Blockchain {
     public static SubBlockchain addSubBlockchain(int difficulty) {
         SubBlockchain subBlockchain = new SubBlockchain(difficulty);
         subBlockchains.add(subBlockchain);
+        Storage.serializeBlockchain();
         return subBlockchain;
     }
 
