@@ -1,5 +1,7 @@
 package com.alexkaradimos.blockchain.models;
 
+import com.alexkaradimos.blockchain.helpers.Storage;
+
 import java.util.ArrayList;
 
 /**
@@ -51,6 +53,7 @@ public class Blockchain {
         String prevHash = getLatestBlock().getHash();
         Block newBlock = new Block(++latestIndex, prevHash, data);
         blocks.add(newBlock);
+        Storage.backupBlockchain();
         return newBlock;
     }
 
