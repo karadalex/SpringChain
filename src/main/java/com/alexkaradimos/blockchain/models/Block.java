@@ -43,6 +43,11 @@ public class Block {
         this.subBlocksData = new ArrayList<SubBlock>();
     }
 
+    public Block() {
+        // Default constructor,
+        // used in deserialization
+    }
+
     public int getIndex() {
         return index;
     }
@@ -119,5 +124,41 @@ public class Block {
                 ",\n\tnonce: " + getNonce() +
                 ",\n\thash: " + getHash() +
                 "\n}";
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public void setPreviousHash(String previousHash) {
+        this.previousHash = previousHash;
+    }
+
+    public void setNonce(int nonce) {
+        this.nonce = nonce;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public void setStringData(String stringData) {
+        this.stringData = stringData;
+    }
+
+    public void setTokenTransactionsData(ArrayList<TokenTransaction> tokenTransactionsData) {
+        this.tokenTransactionsData = tokenTransactionsData;
+    }
+
+    public void setDataTransactionsData(ArrayList<DataTransaction> dataTransactionsData) {
+        this.dataTransactionsData = dataTransactionsData;
+    }
+
+    public void setSubBlocksData(ArrayList<SubBlock> subBlocksData) {
+        this.subBlocksData = subBlocksData;
     }
 }

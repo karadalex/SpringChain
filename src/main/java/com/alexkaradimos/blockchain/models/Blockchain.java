@@ -25,6 +25,22 @@ public class Blockchain {
         }
     }
 
+    public static void setBlocks(ArrayList<Block> blocks) {
+        Blockchain.blocks = blocks;
+    }
+
+    public static void setSubBlockchains(ArrayList<SubBlockchain> subBlockchains) {
+        Blockchain.subBlockchains = subBlockchains;
+    }
+
+    public static void setLatestIndex(int latestIndex) {
+        Blockchain.latestIndex = latestIndex;
+    }
+
+    public static void setDifficulty(int difficulty) {
+        Blockchain.difficulty = difficulty;
+    }
+
     private void createGenesisBlock() {
         blocks.add(new Block(0, "0", "GenesisBlock"));
     }
@@ -53,7 +69,7 @@ public class Blockchain {
         String prevHash = getLatestBlock().getHash();
         Block newBlock = new Block(++latestIndex, prevHash, data);
         blocks.add(newBlock);
-        Storage.backupBlockchain();
+        Storage.serializeBlockchain();
         return newBlock;
     }
 

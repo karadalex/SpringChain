@@ -10,9 +10,7 @@ public class BlockchainApplication {
 
 	public static void main(String[] args) {
 		new Blockchain();
-		Blockchain.addBlock("first block");
-
-		Storage.backupBlockchain();
+		Storage.deserializeBlockchain();
 
 		SpringApplication.run(BlockchainApplication.class, args);
 	}

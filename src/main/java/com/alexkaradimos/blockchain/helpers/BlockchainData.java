@@ -21,9 +21,19 @@ public class BlockchainData {
         return blocks;
     }
 
+    public void setBlocks(ArrayList<Block> blocks) {
+        Blockchain.setBlocks(blocks);
+        this.blocks = blocks;
+    }
+
     public ArrayList<SubBlockchain> getSubBlockchains() {
         subBlockchains = Blockchain.getSubBlockchains();
         return subBlockchains;
+    }
+
+    public void setSubBlockchains(ArrayList<SubBlockchain> subBlockchains) {
+        Blockchain.setSubBlockchains(subBlockchains);
+        this.subBlockchains = subBlockchains;
     }
 
     public int getLatestIndex() {
@@ -31,9 +41,19 @@ public class BlockchainData {
         return latestIndex;
     }
 
+    public void setLatestIndex(int latestIndex) {
+        Blockchain.setLatestIndex(latestIndex);
+        this.latestIndex = latestIndex;
+    }
+
     public int getDifficulty() {
         difficulty = Blockchain.getDifficulty();
         return difficulty;
+    }
+
+    public void setDifficulty(int difficulty) {
+        Blockchain.setDifficulty(difficulty);
+        this.difficulty = difficulty;
     }
 
     public Boolean isChainValid() {

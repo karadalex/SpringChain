@@ -1,11 +1,14 @@
 package com.alexkaradimos.blockchain.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
 /**
  * Created by karadalex on 16/4/2018.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class SubBlockchain {
 
     public ArrayList<SubBlock> subBlocks;
@@ -21,6 +24,11 @@ public class SubBlockchain {
         }
         this.subBlockchainId = UUID.randomUUID().toString();
         this.difficulty = difficulty;
+    }
+
+    public SubBlockchain() {
+        // Default constructor
+        // used in deserialization
     }
 
     private void createGenesisBlock() {
@@ -76,5 +84,21 @@ public class SubBlockchain {
                 ", latestIndex=" + latestIndex +
                 ", difficulty=" + difficulty +
                 '}';
+    }
+
+    public void setSubBlocks(ArrayList<SubBlock> subBlocks) {
+        this.subBlocks = subBlocks;
+    }
+
+    public void setSubBlockchainId(String subBlockchainId) {
+        this.subBlockchainId = subBlockchainId;
+    }
+
+    public void setLatestIndex(int latestIndex) {
+        this.latestIndex = latestIndex;
+    }
+
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
     }
 }
